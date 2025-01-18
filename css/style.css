@@ -1,35 +1,9 @@
 @import url("normalize.css");
 @import url("fonts.css");
-@import url("../css/null.css");
-
-
-/* @font-face {
-    font-family: 'Source Sans Pro';
-    src: url('../fonts/SourceSansPro-Regular.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Source Sans Pro';
-    src: url('../fonts/SourceSansPro-Semibold.woff2') format('woff2');
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Bodoni 72', sans-serif;
-    src: url('../fonts/BodoniSvtyTwoITCTT-Book.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-} */
+@import url("null.css");
 
 body{
     font-family:var(--font-family) , sans-serif;
-    /* font-family: 'Source Sans Pro', sans-serif; */
 }
 /* селектор атрибуту, застосовується до класів де є __container */
 [class*="__container"]{
@@ -82,6 +56,23 @@ transition: all 0.3s;
     margin:0 auto;
     
     }
+ 
+    .header__title {
+        font-family: var(--second-family);
+        font-weight: 400;
+        font-size: 64px;
+        color: #000;
+        }
+
+ .header_subtitle {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 16px;
+        letter-spacing: 0.05em;
+        text-align: center;
+        color: #000;
+        padding-bottom: 32px;
+    }   
 
 /* HERO section */
 .hero {
@@ -214,10 +205,7 @@ row-gap: 32px;
    
 }
 .about__title {
-font-family: var(--second-family);
-font-weight: 400;
-font-size: 64px;
-color: #000;
+
 }
 
 @media screen and (max-width:768px){
@@ -227,7 +215,7 @@ color: #000;
     }
     
 }
-.about__subtitle {
+.header__subtitle {
 font-family: var(--font-family);
 font-weight: 400;
 font-size: 16px;
@@ -271,35 +259,15 @@ height: 36px;
     display: flex;
     flex-direction: column;
     gap: 64px;
+    align-items: center;
 }
-.attractions__header {
-}
-.header__block {
-}
-.attractions__title {
-font-family: var(--second-family);
-font-weight: 400;
-font-size: 64px;
-color: #000;
-}
-
 
 @media screen and (max-width:768px){
     .attractions__title {
         font-size: 48px;
     }
 }
-.attractions_subtitle {
-    font-family: var(--font-family);
-    font-weight: 400;
-    font-size: 16px;
-    letter-spacing: 0.05em;
-    text-align: center;
-    color: #000;
-    padding-bottom: 32px;
-}
-.attractions__menu {
-}
+
 .attractions__list {
     padding-right: 28px;
     padding-left: 28px;
@@ -307,28 +275,22 @@ color: #000;
     flex-wrap: wrap;
     column-gap: 128px;
     row-gap: 96px;
+    align-self: stretch;
     align-items: center;
     justify-content: center;
 }
-.attractions__item {
-}
+
 .attractions__link {
     display: flex;
     flex-direction: column;
+    gap: 16px;
     align-items: center;
     
 }
-.attr__icon {
-}
 
-.attractions {
-}
-.attractions__container {
-}
 .attractions__header {
 }
-.header__block {
-}
+
 .attraction__title {
 font-family: var(--font-family);
 font-weight: 400;
@@ -337,18 +299,7 @@ letter-spacing: 0.05em;
 text-align: center;
 color: #000;
 }
-.attractions_subtitle {
-}
-.attractions__menu {
-}
-.attractions__list {
-}
-.attractions__item {
-}
-.attractions__link {
-}
-.attr__icon {
-}
+
 .attractions__text {
     text-align: center;
 }
@@ -366,4 +317,100 @@ color: #000;
        
         transition: all 0.3s;
     }
+    }
+
+    /*section COMFORT  */
+
+    .page__comfort {
+    }
+    .comfort {
+        background-color: gainsboro;
+        /* margin-bottom: 106px; */
+    }
+    .comfort__container {
+    }
+    .comfort__header {
+        margin-bottom: 64px;
+    }
+    .header__block {
+    }
+    .header__title {
+    }
+    .header_subtitle {
+    }
+    .comfort__desc {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 24px;
+        letter-spacing: 0.15em;
+        color: #000;
+        text-align: center;
+        margin-bottom: 32px;
+    }
+    .comfort__img {
+      position: absolute;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      transition: all 0.3s;
+    }
+    @media (any-hover : hover){
+        .comfort__item:hover .comfort__img{
+            transform: scale(1.1);
+        }
+    }
+
+    .comfort__items {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-bottom: 74px;
+        
+    }
+    .comfort__item {
+        border-radius: 4px;
+        overflow: hidden;
+        flex-basis: 291px;
+    }
+    /* кожна шоста починати з 4-ої (з 3-ої) */
+    .comfort__item:nth-child(6n + 4),
+    .comfort__item:nth-child(6n + 3){
+        flex-basis: 408px;
+    }
+    .comfort_link {
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        aspect-ratio: 292 / 286;
+        padding: 20px;
+    }
+    .comfort__item:nth-child(6n + 4) .comfort_link,
+    .comfort__item:nth-child(6n + 3) .comfort_link{
+        aspect-ratio: 408 / 286;
+    }
+    .comfort_link::after{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        opacity: 0.2;
+    }
+    .comfort_item_title {
+        font-family: var(--font-family);
+        font-weight: 600;
+        font-size: 28px;
+        letter-spacing: 0.15em;
+        text-align: center;
+        color: #fff;
+        position: relative;
+        z-index: 2;
+        top: 0;
+        left: 0;
+      
     }
